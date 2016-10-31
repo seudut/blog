@@ -1,6 +1,12 @@
-#+TITLE: Index
+#+TITLE: My Personal Wiki
 #+AUTHOR: Peng Li
 #+EMAIL: seudut@gmail.com
 #+DATE: 2016-10-25
+#+STARTUP: showall
+#+STARTUP: inlineimages
+#+OPTIONS: toc:nil
 
-Hello Org-Mode!!
+Welcome to Peng's Personal Wiki
+
+* Blog
+- [[file:Blog-with-org-mode.org][Blow with Org-mode]]

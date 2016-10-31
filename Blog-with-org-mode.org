@@ -1,0 +1,47 @@
+#+TITLE: Blog with Org Mode
+#+AUTHOR: Peng Li
+#+EMAIL: seudut@gmail.com
+#+DATE: 2016-10-26
+#+STARTUP: showall
+#+STARTUP: inlineimages
+#+OPTIONS: toc:nil
+
+
+今天总算把 Blog 的框架大致弄好了。主要参考了 =Org-mode= 的 tutorial, [[http://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html#Special-comment-section][Publishing Org-mode files to HTML]] 和 [[https://ogbe.net/blog/blogging_with_org.html][Blogging using org-mode (and
+nothing else)]]。 其中 =css= , 利用的是 =worg.css=, 并参考了[[http://dayigu.github.io/WhyUseOrgModeToWriteBlog.html][为什么用org-mode写 blog？]] 和  [[http://wiki.houye.xyz/blogwithorg-mode.html][用org-mode写博客]]。
+
+* Org-publish 配置
+其中有些配置可能是 =Org= 版本不同的原因，有些不同。比如 =htlm-head=, 代替 了 =style=
+#+BEGIN_SRC emacs-lisp :tangle yes :results silent
+  (require 'ox-publish)
+
+  (setq org-publish-project-alist
+        `(
+          ("org-notes"
+           :base-directory "~/Private/blog/"
+           :base-extension "org"
+           :publishing-directory "~/Private/publish_html"
+           :recursive t
+           :publishing-function org-html-publish-to-html
+           :headline-levels 4
+           :section-numbers nil
+           :auto-preamble t
+           :auto-sitemap t          ;Generate sitmap.org automagicaly...
+           :sitemap-filename "sitemap.org" ;... call it sitemap.org (it's the default )...
+           :sitemap-title "Sitemap"
+
+           :table-of-contents nil
+           :html-postamble nil            ;dont export creator auto validation info in html postamble div
+           :html-link-home "/"
+           :html-head "<link rel='stylesheet' href='./css/worg.css' />"
+           ;; :html-head-extra ,my-blog-extra-head
+           :html-head-include-default-style nil
+           :html-head-include-scripts nil)
+          ("org-static"
+           :base-directory "~/Private/blog/"
+           :base-extension "css\\|js\\|png\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+           :publishing-directory "~/Private/publish_html"
+           :recursive t
+           :publishing-function org-publish-attachment)
+          ("org" :components ("org-notes" "org-static"))))
+#+END_SRC
