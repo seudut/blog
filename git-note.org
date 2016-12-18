@@ -1,0 +1,39 @@
+#+TITLE: Git Note
+#+AUTHOR: Peng Li
+#+EMAIL: seudut@gmail.com
+#+DATE: 2016-12-18
+
+* Git Note
+** Update an forked repo on  Github
+See [[http://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository]]
+#+BEGIN_SRC sh :results output replace
+  # Add the remote, called it "upstream", which is the original repo forked
+
+  git remote add upstream https://github.com/whoever/whatever.git
+
+  # Fetch upstream
+
+  git fetch upstream
+
+  # switch to master
+
+  git checkout master
+
+  # rebase all commit in upstream
+
+  git rebase upstream/master
+
+  # push the new commit
+
+  git push origin master
+#+END_SRC
+
+** Move branch pointer to commit
+Ususally, we create a branch for some bug fix. If it is a regress issue, we oftern need to rollback to some commit to fix the 
+bad commit. In this case, we need to move the branch to another commit
+[[http://stackoverflow.com/questions/5471174/git-move-branch-pointer-to-different-commit-without-checkout]]
+
+#+BEGIN_SRC sh :results output replace
+  git branch -f branch-name COMMIT
+#+END_SRC
+
