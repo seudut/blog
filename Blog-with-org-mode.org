@@ -4,7 +4,7 @@
 #+DATE: 2016-10-26
 #+STARTUP: showall
 #+STARTUP: inlineimages
-#+OPTIONS: toc:nil
+#+OPTIONS: toc:nil date:t
 
 
 今天总算把 Blog 的框架大致弄好了。主要参考了 =Org-mode= 的 tutorial, [[http://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html#Special-comment-section][Publishing Org-mode files to HTML]] 和 [[https://ogbe.net/blog/blogging_with_org.html][Blogging using org-mode (and

@@ -10,3 +10,4 @@ Welcome to Peng's Personal Wiki
 
 * Blog
 - [[file:Blog-with-org-mode.org][Blow with Org-mode]]
+- [[file:git-note.org][Git Note]]
