@@ -37,3 +37,24 @@ bad commit. In this case, we need to move the branch to another commit
   git branch -f branch-name COMMIT
 #+END_SRC
 
+** Track local branch to remote branch
+Sometime, we enter the issue =no upstream is configured for master=, It is because of local branch tracking is not configured
+If you input ~git pull~, it hints the error
+#+BEGIN_EXAMPLE
+  peli3@[~/Private/blog]>> git pull                                                         ±[••][master]
+  There is no tracking information for the current branch.
+  Please specify which branch you want to merge with.
+  See git-pull(1) for details.
+
+      git pull <remote> <branch>
+
+  If you wish to set tracking information for this branch you can do so with:
+
+      git branch --set-upstream-to=origin/<branch> master
+#+END_EXAMPLE
+
+#+BEGIN_SRC sh :results output replace
+  git branch --set-upstream-to=origin/master master
+#+END_SRC
+
+
