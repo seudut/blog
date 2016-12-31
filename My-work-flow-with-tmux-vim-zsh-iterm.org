@@ -1,0 +1,14 @@
+#+TITLE: My Work Flow with Tmux + Vim + Zsh + iTerm2
+#+AUTHOR: Peng Li
+#+EMAIL: seudut@gmail.com
+#+DATE: 2016-12-31
+
+My most work is on Mac OSX platform. Here are some of my efficient tools when coding. iTerm2 + Zsh + Tmux + Vim
+
+* iTem2
+
+* Zsh
+
+* Tmux
+
+* Vim
