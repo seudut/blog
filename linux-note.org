@@ -1,0 +1,34 @@
+#+TITLE: Note of Linux (Debian)
+#+AUTHOR: Peng Li
+#+EMAIL: seudut@gmail.com
+#+DATE: 2016-12-23
+
+* Install and Environment
+** Install ios in virtual box
+** install essential softwares
+*** Change the sourece.list
+163 mirrors
+#+BEGIN_EXAMPLE
+  deb http://mirrors.163.com/debian stable main non-free contrib
+  deb-src http://mirrors.163.com/debian stable main non-free contrib
+#+END_EXAMPLE
+*** Install essential packages
+- ~netselect-apt~
+  Find the fastest apt mirror server
+- vim
+- sudo
+  Add user to sudo group or change the =/etc/sudoers= to use =sudo= command
+  #+BEGIN_SRC sh :results output replace
+      sudo adduser <username> sudo
+  #+END_SRC
+- git, openssh-server, emacs, build-essential, tmux, zsh
+
+*** Build Emacs from source
+1. gnutls error, to fix, install =gnutls-dev= and =pkg-config=
+
+
+* Issue
+1. See the router table on mac 
+#+BEGIN_SRC sh :results output replace
+  netstat -nr
+#+END_SRC

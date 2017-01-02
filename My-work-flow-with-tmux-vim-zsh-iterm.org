@@ -6,6 +6,7 @@
 My most work is on Mac OSX platform. Here are some of my efficient tools when coding. iTerm2 + Zsh + Tmux + Vim
 
 * iTem2
+The default terminal tool on Mac is Terminal.app, but [[https://www.iterm2.com/][iTerm2]] has much more enhancement features.
 
 * Zsh
 
