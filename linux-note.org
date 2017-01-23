@@ -25,10 +25,12 @@
 
 *** Build Emacs from source
 1. gnutls error, to fix, install =gnutls-dev= and =pkg-config=
-
-
 * Issue
 1. See the router table on mac 
 #+BEGIN_SRC sh :results output replace
   netstat -nr
 #+END_SRC
+
+* VirtualBox
+** HostOnly and NAT
+** Port forward, web server
