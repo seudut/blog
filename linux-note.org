@@ -21,10 +21,18 @@
   #+BEGIN_SRC sh :results output replace
       sudo adduser <username> sudo
   #+END_SRC
-- git, openssh-server, emacs, build-essential, tmux, zsh
+- git, openssh-server, emacs, build-essential, tmux, zsh, silversearcher-ag
 
 *** Build Emacs from source
+configure emacs =-without-x=
+
+#+BEGIN_EXAMPLE
+
+Does Emacs use -lgnutls?                                no
+#+END_EXAMPLE
+
 1. gnutls error, to fix, install =gnutls-dev= and =pkg-config=
+   - install =libncurses-dev=, =gnutls-dev=
 * Issue
 1. See the router table on mac 
 #+BEGIN_SRC sh :results output replace
@@ -34,3 +42,19 @@
 * VirtualBox
 ** HostOnly and NAT
 ** Port forward, web server
+** Shared folder
+- Install Guest Addition,
+https://forums.virtualbox.org/viewtopic.php?t=15679
+- Create folder to share in host machine
+- add user to virtualbox group
+
+* Apache config
+** cgi directory config
+#+BEGIN_SRC sh
+           ScriptAlias /cgi-bin/ /var/cgi-bin/
+           <Directory "/var/cgi-bin">
+                   AllowOverride None
+                   Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+                   Require all granted
+           </Directory>
+#+END_SRC
