@@ -1,0 +1,8 @@
+#+TITLE: Org Tips
+#+AUTHOR: Peng Li
+#+EMAIL: seudut@gmail.com
+#+DATE: 2016-11-10
+
+* Fix Chinese fonts in Org table
+
+* 

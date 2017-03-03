@@ -7,6 +7,9 @@
 #+OPTIONS: toc:nil date:t
 
 
+
+
+
 今天总算把 Blog 的框架大致弄好了。主要参考了 =Org-mode= 的 tutorial, [[http://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html#Special-comment-section][Publishing Org-mode files to HTML]] 和 [[https://ogbe.net/blog/blogging_with_org.html][Blogging using org-mode (and
 nothing else)]]。 其中 =css= , 利用的是 =worg.css=, 并参考了[[http://dayigu.github.io/WhyUseOrgModeToWriteBlog.html][为什么用org-mode写 blog？]] 和  [[http://wiki.houye.xyz/blogwithorg-mode.html][用org-mode写博客]]。
 
@@ -33,7 +36,7 @@ nothing else)]]。 其中 =css= , 利用的是 =worg.css=, 并参考了[[http://
            :table-of-contents nil
            :html-postamble nil            ;dont export creator auto validation info in html postamble div
            :html-link-home "/"
-           :html-head "<link rel='stylesheet' href='./css/worg.css' />"
+           :html-head "<link rel='stylesheet' href='./css/org.css' />"
            ;; :html-head-extra ,my-blog-extra-head
            :html-head-include-default-style nil
            :html-head-include-scripts nil)

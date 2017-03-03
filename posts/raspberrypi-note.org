@@ -1,0 +1,28 @@
+#+TITLE: The note of raspberry
+#+AUTHOR: Peng Li
+#+EMAIL: seudut@gmail.com
+#+DATE: 2017-02-18
+
+* Install Raspbian 
+** format the sd card and install the image
+- earse as MBR  type  and FAT fromat  using Disk Utility on Mac
+- dd the image
+** start the system and config the network
+** Support exFat32 format mobile disk
+Install =exfat-utils= by =aptitude=
+** SSHd not started on boot
+http://www.raspberrypi-spy.co.uk/2012/05/enable-secure-shell-ssh-on-your-raspberry-pi/
+#+BEGIN_SRC sh :results output replace
+sudo raspi-config
+#+END_SRC
+It can also config  vncserver  started on boot
+** change locales to fix
+#+BEGIN_SRC sh :results output replace
+sudo dpkg-reconfigure locales
+#+END_SRC
+** set the timezone
+copy =/usr/share/zoneinfo/**Shanghai= to =/etc/localtime=
+#+BEGIN_SRC sh :results output replace
+sudo dpkg-reconfigure tzdata
+#+END_SRC
+** 

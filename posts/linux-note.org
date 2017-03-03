@@ -1,0 +1,68 @@
+#+TITLE: Note of Linux (Debian)
+#+AUTHOR: Peng Li
+#+EMAIL: seudut@gmail.com
+#+DATE: 2016-12-23
+
+* Install and Environment
+** Install ios in virtual box
+** install essential softwares
+*** Change the sourece.list
+163 mirrors
+#+BEGIN_EXAMPLE
+  deb http://mirrors.163.com/debian stable main non-free contrib
+  deb-src http://mirrors.163.com/debian stable main non-free contrib
+#+END_EXAMPLE
+*** Install essential packages
+- ~netselect-apt~
+  Find the fastest apt mirror server
+- vim
+- sudo
+  Add user to sudo group or change the =/etc/sudoers= to use =sudo= command
+  #+BEGIN_SRC sh :results output replace
+      sudo adduser <username> sudo
+  #+END_SRC
+- git, openssh-server, emacs, build-essential, tmux, zsh, silversearcher-ag
+
+*** Build Emacs from source
+1. gnutls error, to fix, install =gnutls-dev= and =pkg-config=
+** others package
+htop, lftp, apache2, vsftpd, silversearcher-ag,
+* Issue
+1. See the router table on mac 
+#+BEGIN_SRC sh :results output replace
+  netstat -nr
+#+END_SRC
+
+2. wget download https
+https://www.cyberciti.biz/faq/wget-example-download-from-https-web-sites/
+wget --no-check-certificate https://cyberciti.biz/foo/bar.tar.gz
+
+3. =ls= in =zsh= has no color
+
+* VirtualBox
+Install virtualbox guest addition
+https://blog.paranoidpenguin.net/2016/12/installing-the-virtualbox-guest-additions-on-debian-8-jessie/
+** HostOnly and NAT
+** Port forward, web server
+
+* Raspberry raspbian
+** start sshd on boot and vnc server
+http://www.raspberrypi-spy.co.uk/2012/05/enable-secure-shell-ssh-on-your-raspberry-pi/
+
+** Auto mount usb / external disk
+change fstab file, add one entry with the uuid of the disk
+
+** Auto mount smb folder
+1. manuall mount 
+#+BEGIN_EXAMPLE
+sudo mount -t cifs -o username=pi,password=xxx //192.168.31.1/Folder /mnt/folder
+#+END_EXAMPLE
+
+http://askubuntu.com/questions/157128/proper-fstab-entry-to-mount-a-samba-share-on-boot
+
+** apache2
+aptitude install =apache2=, start it by runing 
+
+** vsftpd
+
+** smbclient
