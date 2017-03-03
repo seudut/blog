@@ -24,6 +24,15 @@
 
 ;;; Code:
 
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(package-initialize)
+(setq debug-on-error t)
+
+(unless (package-installed-p 'htmlize)
+  (package-refresh-contents)
+  (package-install 'htmlize))
+
 (require 'org)
 (require 'ox-publish)
 (require 'htmlize)
