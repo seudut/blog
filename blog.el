@@ -27,15 +27,30 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
+
 (setq debug-on-error t)
 
+;; package initialise
 (unless (package-installed-p 'htmlize)
   (package-refresh-contents)
   (package-install 'htmlize))
 
+;; constants
+;; (defconst root-dir (file-name-directory (or load-file-name buffer-file-name)))
+(defconst root-dir "~/Private/blog/")
+(defconst publish-dir "~/Private/publish_html/")
+
+
+
+
+
+
 (require 'org)
+;; (require 'org-html)
 (require 'ox-publish)
 (require 'htmlize)
+
+
 
 ;; To prevent inline-css when exporting html. will use external css
 (setq org-html-htmlize-output-type 'css)
@@ -43,9 +58,9 @@
 (setq org-publish-project-alist
       `(
         ("org-notes"
-         :base-directory "~/Private/blog/"
+         :base-directory ,root-dir
          :base-extension "org"
-         :publishing-directory "~/Private/publish_html"
+         :publishing-directory ,publish-dir
          :recursive t
          :publishing-function org-html-publish-to-html
          :headline-levels 4
@@ -62,9 +77,9 @@
          :html-head-include-default-style nil
          :html-head-include-scripts nil)
         ("org-static"
-         :base-directory "~/Private/blog/"
+         :base-directory ,root-dir
          :base-extension "css\\|js\\|png\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Private/publish_html"
+         :publishing-directory ,publish-dir
          :recursive t
          :publishing-function org-publish-attachment
          :table-of-contents nil)
