@@ -25,6 +25,14 @@
 
 *** Build Emacs from source
 1. gnutls error, to fix, install =gnutls-dev= and =pkg-config=
+
+configure emacs =-without-x=
+
+#+BEGIN_EXAMPLE
+
+Does Emacs use -lgnutls?                                no
+#+END_EXAMPLE
+
 ** others package
 htop, lftp, apache2, vsftpd, silversearcher-ag,
 * Issue
@@ -45,6 +53,23 @@ https://blog.paranoidpenguin.net/2016/12/installing-the-virtualbox-guest-additio
 ** HostOnly and NAT
 ** Port forward, web server
 
+
+** Shared folder
+- Install Guest Addition,
+https://forums.virtualbox.org/viewtopic.php?t=15679
+- Create folder to share in host machine
+- add user to virtualbox group
+
+* Apache config
+** cgi directory config
+#+BEGIN_SRC sh
+           ScriptAlias /cgi-bin/ /var/cgi-bin/
+           <Directory "/var/cgi-bin">
+                   AllowOverride None
+                   Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+                   Require all granted
+           </Directory>
+#+END_SRC
 * Raspberry raspbian
 ** start sshd on boot and vnc server
 http://www.raspberrypi-spy.co.uk/2012/05/enable-secure-shell-ssh-on-your-raspberry-pi/
