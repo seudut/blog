@@ -47,3 +47,9 @@ nothing else)]]。 其中 =css= , 利用的是 =worg.css=, 并参考了[[http://
            :publishing-function org-publish-attachment)
           ("org" :components ("org-notes" "org-static"))))
 #+END_SRC
+
+* CI build
+
+* Web server
+
+* CGI update

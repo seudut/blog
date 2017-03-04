@@ -3,6 +3,6 @@
 #+EMAIL: seudut@gmail.com
 #+DATE: 2016-10-25
 
-https://travis-ci.org/seudut/blog.svg?branch=master
+[[https://travis-ci.org/seudut/blog][https://travis-ci.org/seudut/blog.svg?branch=master]]
 
 My blog with org-mode
