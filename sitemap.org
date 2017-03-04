@@ -2,15 +2,11 @@
 
    + posts
      + [[file:posts/Blog-with-org-mode.org][Blog with Org Mode]]
-     + [[file:posts/elisp-tips.org][Emacs List Tips]]
      + [[file:posts/git-note.org][Git Note]]
      + [[file:posts/My-work-flow-with-tmux-vim-zsh-iterm.org][My Work Flow with Tmux + Vim + Zsh + iTerm2]]
      + [[file:posts/linux-note.org][Note of Linux (Debian)]]
-     + [[file:posts/org-tips.org][Org Tips]]
-     + [[file:posts/test.org][Test]]
      + [[file:posts/raspberrypi-note.org][The note of raspberry]]
-     + [[file:posts/print-vs-message-in-emacs.org][jifjeif]]
-     + [[file:posts/A-new-package-for-working-with-multiple-workspaces.org][fjioejfe]]
+     + [[file:posts/note.org][note]]
    + [[file:index.org][My Personal Wiki]]
    + [[file:README.org][README]]
    + [[file:remember.org][Remember]]

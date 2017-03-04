@@ -40,8 +40,8 @@
 ;; (defconst root-dir "~/Private/blog/")
 (defconst root-dir (file-name-directory (or load-file-name buffer-file-name)))
 (defconst publish-dir (concat root-dir "_site/"))
-(defconst res-dir (concat root-dir "res/"))
-(defconst css-file (concat res-dir "worg.css"))
+(defconst css-file "../css/worg.css")
+;; (defconst css-file (concat root-dir "css/worg.css"))
 
 
 
