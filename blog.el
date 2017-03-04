@@ -91,7 +91,7 @@
         ("org" :components ("org-notes" "org-static"))))
 
 
-(org-publish-project "org" t)
+(org-publish-project "org")
 
 ;; (provide 'blog)
 (kill-emacs 0)
