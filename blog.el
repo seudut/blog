@@ -35,13 +35,13 @@
   (package-refresh-contents)
   (package-install 'htmlize))
 
+
 ;; constants
-;; (defconst root-dir (file-name-directory (or load-file-name buffer-file-name)))
-(defconst root-dir "~/Private/blog/")
-(defconst publish-dir "~/Private/publish_html/")
-
-
-
+;; (defconst root-dir "~/Private/blog/")
+(defconst root-dir (file-name-directory (or load-file-name buffer-file-name)))
+(defconst publish-dir (concat root-dir "_site/"))
+(defconst res-dir (concat root-dir "res/"))
+(defconst css-file (concat res-dir "worg.css"))
 
 
 
@@ -73,7 +73,7 @@
          :html-table-of-contents nil
          :html-postamble nil ;dont export creator auto validation info in html postamble div
          :html-link-home "/"
-         :html-head "<link rel='stylesheet' href='/Users/peli3/Private/blog/res/worg.css' />"
+         :html-head  ,(concat  "<link rel='stylesheet' href='" css-file  "' />")
          :html-head-include-default-style nil
          :html-head-include-scripts nil)
         ("org-static"

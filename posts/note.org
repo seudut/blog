@@ -1,0 +1,9 @@
+#+TITLE: note
+#+AUTHOR: Peng Li
+#+EMAIL: seudut@gmail.com
+#+DATE: 2017-03-04
+
+* some post to do
+- introduction to  perspeen
+- work flow with vim tmux iterm
+- elisp tips & org-mode tips

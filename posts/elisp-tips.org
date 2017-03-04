@@ -1,5 +1,0 @@
-#+TITLE: Emacs List Tips
-#+AUTHOR: Peng Li
-#+EMAIL: seudut@gmail.com
-#+DATE: 2016-12-04
-
