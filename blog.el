@@ -78,7 +78,7 @@
          :html-head-include-scripts nil)
         ("org-static"
          :base-directory ,root-dir
-         :base-extension "css\\|js\\|png\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :base-extension "css\\|js\\|png\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|el"
          :publishing-directory ,publish-dir
          :recursive t
          :publishing-function org-publish-attachment
