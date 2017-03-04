@@ -1,7 +1,7 @@
 language: ruby
 
 before_install:
-	- sudo apt-get install emacs
+  - sudo apt-get install emacs
 
 script:
-	- make all
+  - make all

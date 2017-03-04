@@ -1,7 +1,6 @@
 ## Makefile to export org in blog file to html
 
 emacs ?= emacs
-
 OUTDIR := ""
 
 all:
