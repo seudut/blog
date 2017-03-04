@@ -2,6 +2,7 @@
 
    + posts
      + [[file:posts/Blog-with-org-mode.org][Blog with Org Mode]]
+     + [[file:posts/emacs-note.org][Emacs Lisp Study Note]]
      + [[file:posts/git-note.org][Git Note]]
      + [[file:posts/My-work-flow-with-tmux-vim-zsh-iterm.org][My Work Flow with Tmux + Vim + Zsh + iTerm2]]
      + [[file:posts/linux-note.org][Note of Linux (Debian)]]

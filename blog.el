@@ -39,18 +39,23 @@
 ;; constants
 ;; (defconst root-dir "~/Private/blog/")
 (defconst root-dir (file-name-directory (or load-file-name buffer-file-name)))
-(defconst publish-dir (concat root-dir "_site/"))
+(defvar publish-dir (concat root-dir "_site/"))
 (defconst css-file "../css/worg.css")
 ;; (defconst css-file (concat root-dir "css/worg.css"))
 
+(let ((aa (pop command-line-args-left)))
+  (if (>  (length aa) 0)
+      (setq publish-dir aa)))
 
+;; (setq publish-dir (or (pop command-line-args-left) publish-dir))
+(message publish-dir)
 
 (require 'org)
-;; (require 'org-html)
 (require 'ox-publish)
 (require 'htmlize)
 
-
+(message "Org-mode version %s" (org-version))
+(message "publish directory is %s" publish-dir)
 
 ;; To prevent inline-css when exporting html. will use external css
 (setq org-html-htmlize-output-type 'css)
@@ -86,5 +91,8 @@
         ("org" :components ("org-notes" "org-static"))))
 
 
-(provide 'blog)
+(org-publish-project "org" t)
+
+;; (provide 'blog)
+(kill-emacs 0)
 ;;; blog.el ends here

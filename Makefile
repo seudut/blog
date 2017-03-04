@@ -2,12 +2,10 @@
 
 emacs ?= emacs
 
-OUT_DIR=/Users/peli3/Private/blog/_site
+OUTDIR := ""
 
 all:
-	$(emacs) -Q --batch \
-		-l ./blog.el \
-		index.org \
-		--eval '(org-publish-current-project t)'
+	$(emacs) -Q --script blog.el $(OUTDIR)
+
 clean:
 	rm -rf _site/*
