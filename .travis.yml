@@ -1,8 +1,14 @@
 language: c
 
 before_install:
-  - sudo apt-get install emacs
-  - emacs --version
+  - git clone https://github.com/rejeep/evm.git $HOME/.evm
+  - export PATH=$HOME/.evm/bin:$PATH
+
+  - evm config path /tmp
+  - evm install $EVM_EMACS --use --skip
+
+env:
+  - EVM_EMACS=emacs-25.1-travis
 
 script:
   - make all
