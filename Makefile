@@ -6,5 +6,9 @@ OUTDIR := ""
 all:
 	$(emacs) -Q --script blog.el $(OUTDIR)
 
+update:
+	git pull
+	$(emacs) -Q --script blog.el $(OUTDIR)
+
 clean:
 	rm -rf _site/*
