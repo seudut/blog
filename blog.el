@@ -41,11 +41,18 @@
 (defconst root-dir (file-name-directory (or load-file-name buffer-file-name)))
 (defvar publish-dir (concat root-dir "_site/"))
 (defconst css-file "../css/worg.css")
+(defvar force-publish nil)
 ;; (defconst css-file (concat root-dir "css/worg.css"))
 
 (let ((aa (pop command-line-args-left)))
   (if (>  (length aa) 0)
       (setq publish-dir aa)))
+
+
+(let ((force (pop command-line-args-left)))
+  (if (string= force "true")
+      (setq force-publish t)))
+
 
 ;; (setq publish-dir (or (pop command-line-args-left) publish-dir))
 (message publish-dir)
@@ -56,6 +63,7 @@
 
 (message "Org-mode version %s" (org-version))
 (message "publish directory is %s" publish-dir)
+(message "force %s" force-publish)
 
 ;; To prevent inline-css when exporting html. will use external css
 (setq org-html-htmlize-output-type 'css)
@@ -83,7 +91,7 @@
          :html-head-include-scripts nil)
         ("org-static"
          :base-directory ,root-dir
-         :base-extension "css\\|js\\|png\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|el"
+         :base-extension "css\\|js\\|png\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|el\\|pl"
          :publishing-directory ,publish-dir
          :recursive t
          :publishing-function org-publish-attachment
@@ -91,7 +99,7 @@
         ("org" :components ("org-notes" "org-static"))))
 
 
-(org-publish-project "org")
+(org-publish-project "org" force-publish)
 
 ;; (provide 'blog)
 (kill-emacs 0)

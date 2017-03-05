@@ -2,9 +2,10 @@
 
 emacs ?= emacs
 OUTDIR := ""
+FORCE := "no"
 
 all:
-	$(emacs) -Q --script blog.el $(OUTDIR)
+	$(emacs) -Q --script blog.el $(OUTDIR) $(FORCE)
 
 update:
 	git pull
