@@ -12,3 +12,4 @@ env:
 
 script:
   - make all FORCE=true
+  - curl http://www.seudut.com/cgi-bin/update.pl
