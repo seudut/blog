@@ -61,6 +61,24 @@ https://forums.virtualbox.org/viewtopic.php?t=15679
 - add user to virtualbox group
 
 * Apache config
+** Enabled Cgi mode
+To enable cgi mdoule, create symbolic link to mods-available/cgid.conf /etc/apache2/mods-enabled/
+https://perlmaven.com/perl-cgi-script-with-apache2
+
+Add sample perl script to test, put under =/usr/lib/cgi-bin/= and chmod a+x, troubleshooting see the log =/var/log/apache2/error.log=
+#+BEGIN_SRC perl 
+  #!/usr/bin/perl -w
+
+  use strict;
+
+  use CGI qw/:standard/;
+
+  print header,
+      start_html ("hello world"),
+      h1 ("hello"),
+      end_html;
+
+#+END_SRC
 ** cgi directory config
 #+BEGIN_SRC sh
            ScriptAlias /cgi-bin/ /var/cgi-bin/

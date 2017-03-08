@@ -9,8 +9,7 @@ all:
 
 # used for automation on server
 update:
-	git pull
-	$(emacs) -Q --script blog.el "~/www/html" "true"
+	git pull && $(emacs) -Q --script blog.el "~/www/html" "true" 
 
 test:
 	$(emaca) -Q --script blog.el "test" "true"
