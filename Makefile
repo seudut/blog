@@ -12,5 +12,8 @@ update:
 	git pull
 	$(emacs) -Q --script blog.el "~/www/html" "true"
 
+test:
+	$(emaca) -Q --script blog.el "test" "true"
+
 clean:
 	rm -rf _site/*
