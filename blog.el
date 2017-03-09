@@ -102,9 +102,9 @@
 	 :html-postamble nil)
 	("blog-posts"
 	 ;; publishing
-	 :base-directory ,(concat root-dir "posts")
+	 :base-directory ,(concat root-dir "/posts")
 	 :base-extension "org"
-	 :publishing-directory ,(concat publish-dir "posts")
+	 :publishing-directory ,(concat publish-dir "/posts")
 	 :recursive t
 	 :publishing-function org-html-publish-to-html
 	 :html-link-home "/"
@@ -114,15 +114,15 @@
 	 ;; don't export creator auto validation info in html postamble div
 	 :html-postamble nil)
 	("blog-css"
-	 :base-directory ,(concat root-dir "css")
+	 :base-directory ,(concat root-dir "/css")
 	 :base-extension ".*"
-	 :publishing-directory ,(concat publish-dir "css")
+	 :publishing-directory ,(concat publish-dir "/css")
 	 :publishing-function org-publish-attachment
 	 :recursive t)
 	("blog-cgi"
-	 :base-directory ,(concat root-dir "cgi-bin")
+	 :base-directory ,(concat root-dir "/cgi-bin")
 	 :base-extension ".*"
-	 :publishing-directory ,(concat publish-dir "cgi-bin")
+	 :publishing-directory ,(concat publish-dir "/cgi-bin")
 	 :publishing-function org-publish-attachment
 	 :recursive t)
         ("blog" :components ("blog-pages" "blog-posts" "blog-css" "blog-cgi"))))
