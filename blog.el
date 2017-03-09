@@ -96,6 +96,7 @@
 	 :publishing-directory ,publish-dir
 	 :recursive nil
 	 :publishing-function org-html-publish-to-html
+	 
 	 ;; html style
 	 :html-head  ,(concat  "<link rel='stylesheet' href='" css-file  "' />")
 	 :html-postamble nil)
@@ -107,6 +108,7 @@
 	 :recursive t
 	 :publishing-function org-html-publish-to-html
 	 :html-link-home "/"
+	 
 	 ;; html style
 	 :html-head ,(concat "<link rel='stylesheet' href='" css-file "' />")
 	 ;; don't export creator auto validation info in html postamble div
