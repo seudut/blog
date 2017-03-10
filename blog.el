@@ -93,8 +93,7 @@
 (setq blog-footer
       "<hr />\n
 <p><span style=\"float: left;\"><a href= \"/blog.xml\">RSS</a></span>
-License: <a href= \"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4.0</a></p>\n
-<p><a href= \"/contact.html\"> Contact</a></p>\n")
+License: <a href= \"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4.0</a></p\n")
 
 ;; don't know why setting this null in `org-publish-project-alist' doesn't work
 ;; (setf org-html-home/up-format "")
