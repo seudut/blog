@@ -48,6 +48,10 @@ nothing else)]]。 其中 =css= , 利用的是 =worg.css=, 并参考了[[http://
           ("org" :components ("org-notes" "org-static"))))
 #+END_SRC
 
+#+BEGIN_SRC sh
+  sudo aptitude install tmux emacs
+#+END_SRC
+
 * CI build
 
 * Web server

@@ -68,6 +68,31 @@
 ;; To prevent inline-css when exporting html. will use external css
 (setq org-html-htmlize-output-type 'css)
 
+
+(setq blog-extra-head
+      (concat
+       "<link rel='stylesheet' href='" css-file "' />\n"
+       ;; "<link rel='stylesheet' href='../css/main.css' />\n"
+       ;; "<link rel='stylesheet' href='../css/code.css' />"
+       ))
+
+;; (setq blog-header
+;;       (concat
+;;        " <header id= "banner" > "
+;;        "<h1><a href= '/' >Dennis Ogbe </a></h1>"
+;;        "<hr>"
+;;        "<nav><ul>"
+;;        "<li><a href= '/contact.html' >Contact</a></li>"
+;;        "<li><a href= '/blog.html' >Blog</a></li>"
+;;        "<li><a href= '/teaching.html' >Teaching</a></li>"
+;;        "<li><a href= '/research.html' >Research</a></li>"
+;;        "<li><a href= '/' >About Me</a></li>"
+;;        "</ul></nav>"
+;;        "</header>"))
+
+;; don't know why setting this null in `org-publish-project-alist' doesn't work
+;; (setf org-html-home/up-format "")
+
 (setq org-publish-project-alist
       `(
         ;; ("org-notes"
@@ -98,7 +123,8 @@
 	 :publishing-function org-html-publish-to-html
 	 
 	 ;; html style
-	 :html-head  ,(concat  "<link rel='stylesheet' href='" css-file  "' />")
+	 :htlm-link-home "/"
+	 :html-head  ,blog-extra-head
 	 :html-postamble nil)
 	("blog-posts"
 	 ;; publishing
@@ -107,12 +133,17 @@
 	 :publishing-directory ,(concat publish-dir "/posts")
 	 :recursive t
 	 :publishing-function org-html-publish-to-html
-	 :html-link-home "/"
-	 
+
 	 ;; html style
-	 :html-head ,(concat "<link rel='stylesheet' href='" css-file "' />")
+  	 :html-link-home "/"
+	 ;; disable Home/Up
+	 :html-home/up-format ""
+	 :html-link-up ""
+	 :html-link-home ""
 	 ;; don't export creator auto validation info in html postamble div
-	 :html-postamble nil)
+	 :html-head ,blog-extra-head
+	 :html-preamble nil
+	 :html-postamble "")
 	("blog-css"
 	 :base-directory ,(concat root-dir "/css")
 	 :base-extension ".*"
