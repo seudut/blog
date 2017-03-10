@@ -115,9 +115,13 @@ License: <a href= \"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4
 	 :html-home/up-format ""
 	 :html-link-home ""
 	 :html-link-up ""
-	 
-	 :html-head  ,blog-extra-head
-	 :html-postamble nil)
+	 ;;
+	 :html-head nil
+	 :html-head-include-default-style nil
+	 :html-head-include-scripts nil
+	 :html-head-extra  ,blog-extra-head
+	 :html-preamble ,blog-header
+	 :html-postamble ,blog-footer)
 
 	("blog-posts"
 	 ;; publishing
