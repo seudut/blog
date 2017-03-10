@@ -82,21 +82,19 @@
        "<h1><a href= '/' >Peng Li</a></h1>"
        "<hr>"
        "<nav><ul>"
-       ;; "<li><a href= '/contact.html' >Contact</a></li>"
+       "<li><a href= '/' >About</a></li>"
        "<li><a href= '/blog.html' >Blog</a></li>"
-       ;; "<li><a href= '/teaching.html' >Teaching</a></li>"
-       ;; "<li><a href= '/research.html' >Research</a></li>"
-       "<li><a href= '/' >About Me</a></li>"
+       "<li><a href= '/home.html' >Home</a></li>"
        "</ul></nav>"
        "</header>"))
 
 
 
-;; (setq blog-footer
-;;       "<hr />\n
-;; <p><span style=\"float: left;\"><a href= \"/blog.xml\">RSS</a></span>
-;; License: <a href= \"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4.0</a></p>\n
-;; <p><a href= \"/contact.html\"> Contact</a></p>\n")
+(setq blog-footer
+      "<hr />\n
+<p><span style=\"float: left;\"><a href= \"/blog.xml\">RSS</a></span>
+License: <a href= \"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4.0</a></p>\n
+<p><a href= \"/contact.html\"> Contact</a></p>\n")
 
 ;; don't know why setting this null in `org-publish-project-alist' doesn't work
 ;; (setf org-html-home/up-format "")
@@ -141,7 +139,7 @@
 	 :html-head-include-scripts nil
 	 :html-head-extra ,blog-extra-head
 	 :html-preamble ,blog-header
-	 ;; :html-postamble ,blog-footer
+	 :html-postamble ,blog-footer
 
 	 ;; sitemap
 	 :auto-sitemap t
