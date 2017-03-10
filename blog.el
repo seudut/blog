@@ -103,25 +103,6 @@
 
 (setq org-publish-project-alist
       `(
-        ;; ("org-notes"
-        ;;  :base-directory ,root-dir
-        ;;  :base-extension "org"
-        ;;  :publishing-directory ,publish-dir
-        ;;  :recursive t
-        ;;  :publishing-function org-html-publish-to-html
-        ;;  :headline-levels 4
-        ;;  :section-numbers nil
-        ;;  :auto-preamble t
-        ;;  :auto-sitemap t          ;Generate sitmap.org automagicaly...
-        ;;  :sitemap-filename "sitemap.org" ;... call it sitemap.org (it's the default )...
-        ;;  :sitemap-title "Sitemap"
-
-        ;;  :html-table-of-contents nil
-        ;;  :html-postamble nil ;dont export creator auto validation info in html postamble div
-        ;;  :html-link-home "/"
-        ;;  :html-head  ,(concat  "<link rel='stylesheet' href='" css-file  "' />")
-        ;;  :html-head-include-default-style nil
-        ;;  :html-head-include-scripts nil)
 	("blog-pages"
 	 ;; publishing
 	 :base-directory ,root-dir
@@ -161,6 +142,11 @@
 	 :html-head-extra ,blog-extra-head
 	 :html-preamble ,blog-header
 	 ;; :html-postamble ,blog-footer
+
+	 ;; sitemap
+	 :auto-sitemap t
+	 :sitemap-filename "sitemap.org"
+	 :sitemap-title "Sitemap"
 	 )
 	
 	("blog-css"
