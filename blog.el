@@ -90,6 +90,14 @@
        "</ul></nav>"
        "</header>"))
 
+
+
+;; (setq blog-footer
+;;       "<hr />\n
+;; <p><span style=\"float: left;\"><a href= \"/blog.xml\">RSS</a></span>
+;; License: <a href= \"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4.0</a></p>\n
+;; <p><a href= \"/contact.html\"> Contact</a></p>\n")
+
 ;; don't know why setting this null in `org-publish-project-alist' doesn't work
 ;; (setf org-html-home/up-format "")
 
@@ -146,10 +154,14 @@
 	 :html-home/up-format ""
 	 :html-link-up ""
 	 :html-link-home ""
-	 ;; Add css file and preamble
-	 :html-head ,blog-extra-head
+	 ;; Add css file, preamble and posamble
+	 :html-head nil
+	 :html-head-include-default-style nil
+	 :html-head-include-scripts nil
+	 :html-head-extra ,blog-extra-head
 	 :html-preamble ,blog-header
-	 :html-postamble "")
+	 ;; :html-postamble ,blog-footer
+	 )
 	
 	("blog-css"
 	 :base-directory ,(concat root-dir "/css")
