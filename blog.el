@@ -71,24 +71,24 @@
 
 (setq blog-extra-head
       (concat
-       "<link rel='stylesheet' href='" css-file "' />\n"
-       ;; "<link rel='stylesheet' href='../css/main.css' />\n"
-       ;; "<link rel='stylesheet' href='../css/code.css' />"
+       ;; "<link rel='stylesheet' href='" css-file "' />\n"
+       "<link rel='stylesheet' href='../css/main.css' />\n"
+       "<link rel='stylesheet' href='../css/code.css' />"
        ))
 
-;; (setq blog-header
-;;       (concat
-;;        " <header id= "banner" > "
-;;        "<h1><a href= '/' >Dennis Ogbe </a></h1>"
-;;        "<hr>"
-;;        "<nav><ul>"
-;;        "<li><a href= '/contact.html' >Contact</a></li>"
-;;        "<li><a href= '/blog.html' >Blog</a></li>"
-;;        "<li><a href= '/teaching.html' >Teaching</a></li>"
-;;        "<li><a href= '/research.html' >Research</a></li>"
-;;        "<li><a href= '/' >About Me</a></li>"
-;;        "</ul></nav>"
-;;        "</header>"))
+(setq blog-header
+      (concat
+       " <header id= 'banner' > "
+       "<h1><a href= '/' >Peng Li</a></h1>"
+       "<hr>"
+       "<nav><ul>"
+       ;; "<li><a href= '/contact.html' >Contact</a></li>"
+       "<li><a href= '/blog.html' >Blog</a></li>"
+       ;; "<li><a href= '/teaching.html' >Teaching</a></li>"
+       ;; "<li><a href= '/research.html' >Research</a></li>"
+       "<li><a href= '/' >About Me</a></li>"
+       "</ul></nav>"
+       "</header>"))
 
 ;; don't know why setting this null in `org-publish-project-alist' doesn't work
 ;; (setf org-html-home/up-format "")
@@ -124,8 +124,14 @@
 	 
 	 ;; html style
 	 :htlm-link-home "/"
+	 ;; disable home/up div
+	 :html-home/up-format ""
+	 :html-link-home ""
+	 :html-link-up ""
+	 
 	 :html-head  ,blog-extra-head
 	 :html-postamble nil)
+
 	("blog-posts"
 	 ;; publishing
 	 :base-directory ,(concat root-dir "/posts")
@@ -140,10 +146,11 @@
 	 :html-home/up-format ""
 	 :html-link-up ""
 	 :html-link-home ""
-	 ;; don't export creator auto validation info in html postamble div
+	 ;; Add css file and preamble
 	 :html-head ,blog-extra-head
-	 :html-preamble nil
+	 :html-preamble ,blog-header
 	 :html-postamble "")
+	
 	("blog-css"
 	 :base-directory ,(concat root-dir "/css")
 	 :base-extension ".*"
