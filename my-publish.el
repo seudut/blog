@@ -56,7 +56,7 @@
 <p><span style=\"float: left;\"><a href= \"/blog.xml\">RSS</a></span>
 License: <a href= \"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4.0</a></p\n")
 
-(defun blog-setup-project-alist (root-dir &optinal output-dir)
+(defun blog-setup-project-alist (root-dir &optional output-dir)
   "Set project alist. `output-dir' is the directory of publish-directory.
 `root-dir' is the root directory of blog repository."
   (unless output-dir (setq output-dir (concat root-dir "_site/")))
