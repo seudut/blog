@@ -29,14 +29,8 @@
 (require 'org)
 (require 'ox-publish)
 
-(defconst root-dir (file-name-directory (or load-file-name buffer-file-name)))
-(defvar publish-dir (concat root-dir "_site/"))
-(defconst css-file "../css/worg.css")
-(defvar force-publish nil)
-
 ;; To prevent inline-css when exporting html. will use external css
 (setq org-html-htmlize-output-type 'css)
-
 
 (setq blog-extra-head
       (concat
@@ -62,16 +56,17 @@
 <p><span style=\"float: left;\"><a href= \"/blog.xml\">RSS</a></span>
 License: <a href= \"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4.0</a></p\n")
 
-(defun blog-setup-project (output-dir)
-  "Set project alist."
-  (setq publish-dir output-dir)
+(defun blog-setup-project-alist (root-dir &optinal output-dir)
+  "Set project alist. `output-dir' is the directory of publish-directory.
+`root-dir' is the root directory of blog repository."
+  (unless output-dir (setq output-dir (concat root-dir "_site/")))
   (setq org-publish-project-alist
 	`(
 	  ("blog-pages"
 	   ;; publishing
 	   :base-directory ,root-dir
 	   :base-extension "org"
-	   :publishing-directory ,publish-dir
+	   :publishing-directory ,output-dir
 	   :recursive nil
 	   :publishing-function org-html-publish-to-html
 	   
@@ -93,7 +88,7 @@ License: <a href= \"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4
 	   ;; publishing
 	   :base-directory ,(concat root-dir "/posts")
 	   :base-extension "org"
-	   :publishing-directory ,(concat publish-dir "/posts")
+	   :publishing-directory ,(concat output-dir "/posts")
 	   :recursive t
 	   :publishing-function org-html-publish-to-html
 
@@ -119,18 +114,17 @@ License: <a href= \"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4
 	  ("blog-css"
 	   :base-directory ,(concat root-dir "/css")
 	   :base-extension ".*"
-	   :publishing-directory ,(concat publish-dir "/css")
+	   :publishing-directory ,(concat output-dir "/css")
 	   :publishing-function org-publish-attachment
 	   :recursive t)
 	  ("blog-cgi"
 	   :base-directory ,(concat root-dir "/cgi-bin")
 	   :base-extension ".*"
-	   :publishing-directory ,(concat publish-dir "/cgi-bin")
+	   :publishing-directory ,(concat output-dir "/cgi-bin")
 	   :publishing-function org-publish-attachment
 	   :recursive t)
 	  ("blog" :components ("blog-pages" "blog-posts" "blog-css" "blog-cgi")))))
 
-(blog-setup-project publish-dir)
 
 (defun blog-publish (out-dir force)
   "publish the project"
