@@ -1,4 +1,4 @@
-;;; publish.el --- Publish blog with org-mode        -*- lexical-binding: t; -*-
+;;; my-publish.el --- Publish blog with org-mode        -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2017  Peng Li
 
@@ -133,5 +133,5 @@ License: <a href= \"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4
   (org-publish-project "blog" force))
 
 
-(provide 'publish)
+(provide 'my-publish)
 ;;; publish.el ends here
