@@ -45,9 +45,9 @@
        "<h1><a href= '/' >Peng Li</a></h1>"
        "<hr>"
        "<nav><ul>"
-       "<li><a href= './' >About</a></li>"
-       "<li><a href= './sitemap.html' >Blog</a></li>"
-       "<li><a href= './home.html' >Home</a></li>"
+       "<li><a href= '/about.html' >About</a></li>"
+       "<li><a href= '/post/sitemap.html' >Blog</a></li>"
+       "<li><a href= '/index.html' >Home</a></li>"
        "</ul></nav>"
        "</header>"))
 
