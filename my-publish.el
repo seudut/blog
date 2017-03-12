@@ -42,7 +42,7 @@
 
 (setq blog-header
       (concat
-       " <header id= 'banner' > "
+       "<header id= 'banner'>"
        "<h1><a href= '/' >Peng Li</a></h1>"
        "<hr>"
        "<nav><ul>"

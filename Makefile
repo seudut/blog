@@ -12,14 +12,11 @@ INIT_PACKAGES = "(progn \
 				(package-initialize) \
 				(unless (package-installed-p 'htmlize) (package-refresh-contents) (package-install 'htmlize)))"
 
-all:
-	$(emacs) -Q --script blog.el $(OUTDIR) $(FORCE)
-
 # used for automation on server
 update:
-	git pull && $(emacs) -Q --script blog.el "~/www/html" "true" 
+	git pull
 
-publish:
+publish: update
 	$(emacs) -Q --batch  \
 		--eval $(INIT_PACKAGES) \
 		--eval '(setq debug-on-error t)' \
