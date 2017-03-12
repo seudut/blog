@@ -87,7 +87,11 @@
 	   :html-head-include-scripts nil
 	   :html-head-extra  ,blog-extra-head
 	   :html-preamble ,blog-header
-	   :html-postamble ,blog-footer)
+	   :html-postamble ,blog-footer
+
+	   ;; other generic options
+	   :with-toc nil
+	   )
 
 	  ("blog-posts"
 	   :base-directory ,(concat root-dir "/posts")
@@ -113,7 +117,11 @@
 	   ;; sitemap
 	   :auto-sitemap t
 	   :sitemap-filename "sitemap.org"
-	   :sitemap-title "Sitemap")
+	   :sitemap-title "Sitemap"
+
+	   ;; other generic options
+	   :with-toc nil 		; table of contents
+	   )
 	  
 	  ("blog-css"
 	   :base-directory ,(concat root-dir "/css")
