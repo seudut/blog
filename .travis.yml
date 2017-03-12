@@ -11,5 +11,4 @@ env:
   - EVM_EMACS=emacs-25.1-travis
 
 script:
-  - make all FORCE=true
-  - curl http://www.seudut.com/cgi-bin/update.pl
+  - make test

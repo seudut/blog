@@ -18,10 +18,11 @@ publish:
 		--eval '(blog-setup-project-alist "$(BLOGDIR)" "$(OUTDIR)")' \
 		--eval '(org-publish-current-project)'
 
-compile:
+# test will force publishing all files in the porject 
+test:
 	$(emacs) -Q --batch -l my-publish.el index.org \
 		--eval '(setq debug-on-error t)' \
-		--eval '(blog-setup-project-alist "$(BLOGDIR)" "$(OUTDIR)")' \
+		--eval '(blog-setup-project-alist "$(BLOGDIR)"' \
 		--eval '(org-publish-current-project t)'
 
 clean:
