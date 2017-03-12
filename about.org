@@ -3,8 +3,8 @@
 #+EMAIL: seudut@gmail.com
 #+DATE: 2017-03-12
 
-* My home page http://www.seudut.com
+- My home page http://www.seudut.com
 
-* Github https://github.com/seudut
+- Github https://github.com/seudut
 
-* Gmail seudut@gmail.com
+- Gmail seudut@gmail.com
