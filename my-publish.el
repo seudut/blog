@@ -45,9 +45,9 @@
        "<h1><a href= '/' >Peng Li</a></h1>"
        "<hr>"
        "<nav><ul>"
-       "<li><a href= '/' >About</a></li>"
-       "<li><a href= '/blog.html' >Blog</a></li>"
-       "<li><a href= '/home.html' >Home</a></li>"
+       "<li><a href= './' >About</a></li>"
+       "<li><a href= './sitemap.html' >Blog</a></li>"
+       "<li><a href= './home.html' >Home</a></li>"
        "</ul></nav>"
        "</header>"))
 
@@ -67,7 +67,6 @@ License: <a href= \"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4
   (setq org-publish-project-alist
 	`(
 	  ("blog-pages"
-	   ;; publishing
 	   :base-directory ,root-dir
 	   :base-extension "org"
 	   :publishing-directory ,output-dir
@@ -89,7 +88,6 @@ License: <a href= \"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4
 	   :html-postamble ,blog-footer)
 
 	  ("blog-posts"
-	   ;; publishing
 	   :base-directory ,(concat root-dir "/posts")
 	   :base-extension "org"
 	   :publishing-directory ,(concat output-dir "/posts")
