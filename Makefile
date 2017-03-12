@@ -20,17 +20,19 @@ update:
 	git pull && $(emacs) -Q --script blog.el "~/www/html" "true" 
 
 publish:
-	$(emacs) -Q --batch -l my-publish.el index.org \
+	$(emacs) -Q --batch  \
 		--eval $(INIT_PACKAGES) \
 		--eval '(setq debug-on-error t)' \
+		-l my-publish.el index.org \
 		--eval '(blog-setup-project-alist "$(BLOGDIR)" "$(OUTDIR)")' \
 		--eval '(org-publish-current-project)'
 
 # test will force publishing all files in the porject 
 test:
-	$(emacs) -Q --batch -l my-publish.el index.org \
+	$(emacs) -Q --batch \
 		--eval $(INIT_PACKAGES) \
 		--eval '(setq debug-on-error t)' \
+		-l my-publish.el index.org \
 		--eval '(blog-setup-project-alist "$(BLOGDIR)")' \
 		--eval '(org-publish-current-project t)'
 

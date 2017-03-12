@@ -28,6 +28,7 @@
 
 (require 'org)
 (require 'ox-publish)
+(require 'htmlize)
 
 ;; To prevent inline-css when exporting html. will use external css
 (setq org-html-htmlize-output-type 'css)
