@@ -1,8 +1,9 @@
 ## Makefile to export org in blog file to html
 
 emacs ?= emacs
-OUTDIR := ""
+OUTDIR := 
 FORCE := "no"
+BLOGDIR := $(PWD)
 
 all:
 	$(emacs) -Q --script blog.el $(OUTDIR) $(FORCE)
@@ -11,8 +12,17 @@ all:
 update:
 	git pull && $(emacs) -Q --script blog.el "~/www/html" "true" 
 
-test:
-	$(emaca) -Q --script blog.el "test" "true"
+publish:
+	$(emacs) -Q --batch -l my-publish.el index.org \
+		--eval '(setq debug-on-error t)' \
+		--eval '(blog-setup-project-alist "$(BLOGDIR)" "$(OUTDIR)")' \
+		--eval '(org-publish-current-project)'
+
+compile:
+	$(emacs) -Q --batch -l my-publish.el index.org \
+		--eval '(setq debug-on-error t)' \
+		--eval '(blog-setup-project-alist "$(BLOGDIR)" "$(OUTDIR)")' \
+		--eval '(org-publish-current-project t)'
 
 clean:
 	rm -rf _site/*

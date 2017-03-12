@@ -59,7 +59,11 @@ License: <a href= \"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4
 (defun blog-setup-project-alist (root-dir &optional output-dir)
   "Set project alist. `output-dir' is the directory of publish-directory.
 `root-dir' is the root directory of blog repository."
-  (unless output-dir (setq output-dir (concat root-dir "_site/")))
+  (unless (> (length output-dir) 0)
+    (setq output-dir (concat root-dir "/_site/")))
+  (message "Blog dir is: %s\nOut dir is: %s"
+	   (format root-dir)
+	   (format output-dir))
   (setq org-publish-project-alist
 	`(
 	  ("blog-pages"
@@ -124,14 +128,6 @@ License: <a href= \"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4
 	   :publishing-function org-publish-attachment
 	   :recursive t)
 	  ("blog" :components ("blog-pages" "blog-posts" "blog-css" "blog-cgi")))))
-
-
-(defun blog-publish (out-dir force)
-  "publish the project"
-  (interactive)
-  (blog-setup-project out-dir)
-  (org-publish-project "blog" force))
-
 
 (provide 'my-publish)
 ;;; publish.el ends here
