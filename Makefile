@@ -22,7 +22,7 @@ publish:
 test:
 	$(emacs) -Q --batch -l my-publish.el index.org \
 		--eval '(setq debug-on-error t)' \
-		--eval '(blog-setup-project-alist "$(BLOGDIR)"' \
+		--eval '(blog-setup-project-alist "$(BLOGDIR)")' \
 		--eval '(org-publish-current-project t)'
 
 clean:
