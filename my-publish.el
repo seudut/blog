@@ -37,8 +37,7 @@
       (concat
        ;; "<link rel='stylesheet' href='../css/worg.css' />\n"
        "<link rel='stylesheet' href='../css/main.css' />\n"
-       "<link rel='stylesheet' href='../css/code.css' />")
-)
+       "<link rel='stylesheet' href='../css/code.css' />"))
 
 (setq blog-header
       (concat

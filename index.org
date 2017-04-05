@@ -3,8 +3,6 @@
 #+EMAIL: seudut@gmail.com
 #+DATE: 2016-10-25
 #+STARTUP: showall
-#+STARTUP: inlineimages
-#+OPTIONS: toc:nil
 
 Welcome to Peng's Personal Wiki
 
