@@ -1,0 +1,39 @@
+html {
+/*    background:#fffbf8; */
+/*    color:#585858; */
+/*    padding:17px; */
+}
+
+body {
+    max-width:45em;
+    margin: 0 auto;
+/*    border: 1px solid LightGrey; */
+}
+
+body .title {
+    text-align:center;
+}
+
+#banner {
+    height: 1.0em;
+/*    background-color: yellow; */
+}
+
+#banner .brand {
+    float: left
+}
+
+#banner nav li {
+    float:right;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#banner a, li a {
+    display:inline-block;
+    height: 1em; 
+    padding:0 .5em;
+    text-decoration:none;
+}
