@@ -42,14 +42,14 @@
 (setq blog-header
       (concat
        "<header id= 'banner'>"
-       "<h1><a href= '/' >Peng Li</a></h1>"
-       "<hr>"
+       "<a class=\"title\"href= '/' >Peng Li</a>"
        "<nav><ul>"
        "<li><a href= '/about.html' >About</a></li>"
        "<li><a href= '/posts/sitemap.html' >Blog</a></li>"
        "<li><a href= '/index.html' >Home</a></li>"
        "</ul></nav>"
-       "</header>"))
+       "</header>"
+       "<hr>"))
 
 (setq blog-footer
       (concat 
