@@ -35,9 +35,8 @@
 
 (setq blog-extra-head
       (concat
-       ;; "<link rel='stylesheet' href='../css/worg.css' />\n"
-       "<link rel='stylesheet' href='../css/my.css' />\n"
-       "<link rel='stylesheet' href='../css/code.css' />"))
+       "<link rel='stylesheet' href='/css/my.css' />\n"
+       "<link rel='stylesheet' href='/css/code.css' />"))
 
 (setq blog-header
       (concat
@@ -54,7 +53,7 @@
 (setq blog-footer
       (concat 
        "<hr />\n"
-       "<p><span style=\"float: left;\"><a href= \"http://orgmode.org\"/>Org-mode </a>" (org-version) "</span>"))
+       "<p><span><a href= \"http://orgmode.org\"/>Org-mode </a>" (org-version) "</span>"))
 
 (defun blog-setup-project-alist (root-dir &optional output-dir)
   "Set project alist. `output-dir' is the directory of publish-directory.
