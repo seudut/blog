@@ -53,7 +53,7 @@
 (setq blog-footer
       (concat 
        "<hr />\n"
-       "<p><span><a href= \"http://orgmode.org\"/>Org-mode </a>" (org-version) "</span>"))
+       "<span><a href= \"http://orgmode.org\"/>Org-mode </a>" (org-version) "</span>"))
 
 (defun blog-setup-project-alist (root-dir &optional output-dir)
   "Set project alist. `output-dir' is the directory of publish-directory.

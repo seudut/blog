@@ -37,3 +37,8 @@ ul {
     padding:0 .5em;
     text-decoration:none;
 }
+
+#postamble.status{
+    text-align: center;
+    font-size: 0.8em;
+}
