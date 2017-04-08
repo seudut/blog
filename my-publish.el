@@ -50,10 +50,14 @@
        "</header>"
        "<hr>"))
 
+;; (setq blog-footer
+;;       (concat 
+;;        "<hr />\n"
+;;        "<span><a href= \"http://orgmode.org\"/>Org-mode </a>" (org-version) "</span>"))
 (setq blog-footer
       (concat 
        "<hr />\n"
-       "<span><a href= \"http://orgmode.org\"/>Org-mode </a>" (org-version) "</span>"))
+       org-html-creator-string))
 
 (defun blog-setup-project-alist (root-dir &optional output-dir)
   "Set project alist. `output-dir' is the directory of publish-directory.
