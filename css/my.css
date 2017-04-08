@@ -97,34 +97,11 @@ pre.src:hover:before{
 	display:inline
 }
 
-pre.src-sh:before{
-	content:'sh'
-}
-
-pre.src-bash:before{
-	content:'bash'
-}
-
-pre.src-emacs-lisp:before{
-	content:'Emacs Lisp'
-}
-
-pre.src-R:before{
-	content:'R'
-}
-
-pre.src-org:before{
-	content:'Org'
-}
-
-pre.src-c+:before{
-	content:'C++'
-}
-
-pre.src-c:before{
-	content:'C'
-}
-
-pre.src-html:before{
-	content:'HTML'
-}
+pre.src-sh:before{ content:'sh' }
+pre.src-bash:before{ content:'bash' }
+pre.src-emacs-lisp:before{ content:'Emacs Lisp' }
+pre.src-R:before{ content:'R' }
+pre.src-org:before{ content:'Org' }
+pre.src-c+:before{ content:'C++' }
+pre.src-c:before{ content:'C' }
+pre.src-html:before{ content:'HTML' }
