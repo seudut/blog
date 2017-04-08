@@ -42,3 +42,75 @@ ul {
     text-align: center;
     font-size: 0.8em;
 }
+
+/* code block */
+code {
+}
+
+pre {
+    overflow:auto;
+    color:#585858;
+    background-color:#f5ebe1;
+    font-size:1.2em;
+    border-color:#585858;
+    border-style:solid;
+    border-width:1px;
+    margin:1em 0;
+    padding:.5em;
+}
+
+pre.src{
+	overflow:auto;
+	padding-top:1.2em;
+	position:relative;
+	font-size:1em;
+}
+
+pre.src:before{
+	display:block;
+	position:absolute;
+	background-color:#585858;
+	top:0;
+	right:0;
+	padding:.25em .5em;
+	border-bottom-left-radius:8px;
+	border:0;
+	color:#fff;
+	font-size:80%
+}
+
+pre.src:hover:before{
+	display:inline
+}
+
+pre.src-sh:before{
+	content:'sh'
+}
+
+pre.src-bash:before{
+	content:'bash'
+}
+
+pre.src-emacs-lisp:before{
+	content:'Emacs Lisp'
+}
+
+pre.src-R:before{
+	content:'R'
+}
+
+pre.src-org:before{
+	content:'Org'
+}
+
+pre.src-c+:before{
+	content:'C++'
+}
+
+pre.src-c:before{
+	content:'C'
+}
+
+pre.src-html:before{
+	content:'HTML'
+}
