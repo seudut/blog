@@ -79,6 +79,7 @@ pre.src{
 	font-size:1em;
     width: 90%;
     margin: 1em auto;
+    font: 12px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 pre.src:before{
