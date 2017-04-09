@@ -50,6 +50,8 @@ ul {
 #content {
     font-size: 90%;
 /*    background: #fff; */
+    /* The font-family setting is stolen from github */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 /* code block */
@@ -74,7 +76,8 @@ pre {
 
 pre.src{
 	overflow:auto;
-	padding-top:1.2em;
+	padding-top:0.8em;
+	padding-bottom:0.8em;
 	position:relative;
 	font-size:1em;
     width: 90%;
@@ -92,7 +95,7 @@ pre.src:before{
 	border-bottom-left-radius:8px;
 	border:0;
 	color:#fff;
-/*	font-size:80% */
+	font-size:80%;
 }
 
 pre.src:hover:before{
