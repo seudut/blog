@@ -16,25 +16,25 @@ INIT_PACKAGES = "(progn \
 CSS := $(wildcard css/*.css)
 OBJS := $(addprefix $(OUTDIR)/,$(CSS))
 
-#$(OUTDIR)/css/%.css:css/%.css
-#	rm -rf ~/.org-timestamps
-#$(OBJS): $(CSS) my-publish.el
-# remove the timestamp file to force publish all files
-$(OBJS): $(OUTDIR)/css/%.css:css/%.css
-	rm -rf ~/.org-timestamps
+.PHONY: update publish clean
 
-.PHONY: update publish test clean
-
-update:
-	git pull
-
-publish: update $(OBJS)
+publish: update temp
 	$(emacs) -Q --batch  \
 		--eval $(INIT_PACKAGES) \
 		--eval '(setq debug-on-error t)' \
 		-l my-publish.el index.org \
 		--eval '(blog-setup-project-alist "$(BLOGDIR)" "$(OUTDIR)")' \
 		--eval '(org-publish-current-project)'
+
+update:
+	git pull
+
+# if the source files (css) file changed, remote the org-timestamps to 
+# re-generate all the html files
+temp: $(CSS) my-publish.el
+	rm -rf ~/.org-timestamps
+	touch temp
+
 
 ## test will force publishing all files in the porject 
 #test:
