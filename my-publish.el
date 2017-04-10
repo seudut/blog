@@ -24,8 +24,6 @@
 
 ;;; Code:
 
-;; (defconst root-dir "~/Private/blog/")
-
 (require 'org)
 (require 'ox-publish)
 (require 'htmlize)
