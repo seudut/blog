@@ -32,7 +32,7 @@
 (defun blog-tool-create-post ()
   "Create a post."
   (interactive)
-  (let ((title (read-from-minibuffer "Title:"))
+  (let ((title (read-from-minibuffer "Title: "))
 	(date (format-time-string "%Y-%m-%d"))
 	(filename ""))
     (setq filename
@@ -46,7 +46,8 @@
 	     "#+AUTHOR: " my-name "\n"
 	     "#+EMAIL: " my-email "\n"
 	     "#+DATE: " date " " (format-time-string "%A") "\n"
-	     "\n"))))
+	     "\n"))
+    (save-buffer)))
 
 
 
