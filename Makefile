@@ -17,10 +17,10 @@ CSS := $(wildcard css/*.css)
 OBJS := $(addprefix $(OUTDIR)/,$(CSS))
 
 #$(OUTDIR)/css/%.css:css/%.css
-#	echo "***** css changed remove timestamps *****\n"
 #	rm -rf ~/.org-timestamps
 #$(OBJS): $(CSS) my-publish.el
-$(OBJS): _site/css/%.css:css/%.css
+# remove the timestamp file to force publish all files
+$(OBJS): $(OUTDIR)/css/%.css:css/%.css
 	rm -rf ~/.org-timestamps
 
 .PHONY: update publish test clean
@@ -36,14 +36,14 @@ publish: update $(OBJS)
 		--eval '(blog-setup-project-alist "$(BLOGDIR)" "$(OUTDIR)")' \
 		--eval '(org-publish-current-project)'
 
-# test will force publishing all files in the porject 
-test:
-	$(emacs) -Q --batch \
-		--eval $(INIT_PACKAGES) \
-		--eval '(setq debug-on-error t)' \
-		-l my-publish.el index.org \
-		--eval '(blog-setup-project-alist "$(BLOGDIR)")' \
-		--eval '(org-publish-current-project t)'
+## test will force publishing all files in the porject 
+#test:
+#	$(emacs) -Q --batch \
+#		--eval $(INIT_PACKAGES) \
+#		--eval '(setq debug-on-error t)' \
+#		-l my-publish.el index.org \
+#		--eval '(blog-setup-project-alist "$(BLOGDIR)")' \
+#		--eval '(org-publish-current-project t)'
 
 clean:
 	rm -rf _site/*

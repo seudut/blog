@@ -50,10 +50,6 @@
        "</header>"
        "<hr>"))
 
-;; (setq blog-footer
-;;       (concat 
-;;        "<hr />\n"
-;;        "<span><a href= \"http://orgmode.org\"/>Org-mode </a>" (org-version) "</span>"))
 (setq blog-footer
       (concat 
        "<hr />\n"
