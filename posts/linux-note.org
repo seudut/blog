@@ -47,6 +47,13 @@ wget --no-check-certificate https://cyberciti.biz/foo/bar.tar.gz
 
 3. =ls= in =zsh= has no color
 
+4.  issue 
+-bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+
+#+BEGIN_SRC sh
+  dpkg-reconfigure locales
+#+END_SRC
+
 * VirtualBox
 Install virtualbox guest addition
 https://blog.paranoidpenguin.net/2016/12/installing-the-virtualbox-guest-additions-on-debian-8-jessie/
@@ -74,8 +81,17 @@ Insert  GuestAddition.ios,
   mount /dev/sr0 /media/cdrom
 #+END_SRC
 
+- install build-essentials, linux-headers-amd64
+
+
 - Create folder to share in host machine
 - add user to virtualbox group
+#+BEGIN_SRC sh :results output replace
+  adduser debian vboxsf
+#+END_SRC
+
+
+
 
 * Apache config
 ** Enabled Cgi mode
