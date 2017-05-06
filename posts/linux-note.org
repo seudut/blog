@@ -51,12 +51,29 @@ wget --no-check-certificate https://cyberciti.biz/foo/bar.tar.gz
 Install virtualbox guest addition
 https://blog.paranoidpenguin.net/2016/12/installing-the-virtualbox-guest-additions-on-debian-8-jessie/
 ** HostOnly and NAT
+- Need install extensions, add a hostonly network, address start as 192.168.56.1, then You host (mac) will be added one more interface, named
+  vboxnet0, 192.168.56.1
+- ADd both hostonly and nat interface in the network setting
+- start linux, and modify =/etc/network/interfaces/=
+   add configure for eth1 (hostonly ) interface, such as 
+#+BEGIN_SRC sh :results output replace
+  allow-hotplug eth1
+  iface eth1 inet static
+  address 192.168.56.2
+  netmask 255.255.255.0
+#+END_SRC
 ** Port forward, web server
 
 
 ** Shared folder
 - Install Guest Addition,
 https://forums.virtualbox.org/viewtopic.php?t=15679
+
+Insert  GuestAddition.ios, 
+#+BEGIN_SRC sh
+  mount /dev/sr0 /media/cdrom
+#+END_SRC
+
 - Create folder to share in host machine
 - add user to virtualbox group
 
