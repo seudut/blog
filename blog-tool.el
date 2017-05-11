@@ -33,11 +33,9 @@
   "Create a post."
   (interactive)
   (let ((title (read-from-minibuffer "Title: "))
-	(date (format-time-string "%Y-%m-%d"))
 	(filename ""))
     (setq filename
 	  (concat blog-root-dir "/posts/"
-		  date "-"
 		  (replace-regexp-in-string " " "-" title)
 		  ".org"))
     (find-file filename)
@@ -45,8 +43,9 @@
 	     "#+TITLE: " title "\n"
 	     "#+AUTHOR: " my-name "\n"
 	     "#+EMAIL: " my-email "\n"
-	     "#+DATE: " date " " (format-time-string "%A") "\n"
-	     "\n"))
+	     "#+DATE: "))
+    (org-insert-time-stamp (current-time) nil nil nil "\n")
+    (insert "\n")
     (save-buffer)))
 
 

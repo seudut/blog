@@ -43,7 +43,7 @@
        "<nav><ul>"
        "<li><a href= '/about.html' >About</a></li>"
        "<li><a href= '/posts/sitemap.html' >Blog</a></li>"
-       "<li><a href= '/index.html' >Home</a></li>"
+       ;; "<li><a href= '/index.html' >Home</a></li>"
        "</ul></nav>"
        "</header>"
        "<hr>"))
@@ -112,7 +112,9 @@
 	   ;; sitemap
 	   :auto-sitemap t
 	   :sitemap-filename "sitemap.org"
-	   :sitemap-title "Sitemap"
+	   :sitemap-title "Blog"
+	   :sitemap-sort-files anti-chronologically
+	   :sitemap-file-entry-format "%d  %t"
 
 	   ;; other generic options
 	   :with-toc nil 		; table of contents
