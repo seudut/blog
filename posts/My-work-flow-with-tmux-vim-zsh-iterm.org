@@ -1,9 +1,11 @@
 #+TITLE: My Work Flow with Tmux + Vim + Zsh + iTerm2
 #+AUTHOR: Peng Li
 #+EMAIL: seudut@gmail.com
-#+DATE: 2016-12-31
+#+DATE: <2016-12-31>
 
 My most work is on Mac OSX platform. Here are some of my efficient tools when coding. iTerm2 + Zsh + Tmux + Vim
+
+
 
 * iTem2
 The default terminal tool on Mac is Terminal.app, but [[https://www.iterm2.com/][iTerm2]] has much more enhancement features.
