@@ -48,6 +48,25 @@
     (insert "\n")
     (save-buffer)))
 
+(defun blog-tool-start-server ()
+  "Start a http server on local folder for test."
+  (interactive)
+  ;; need to check if 8000 port is in use or not
+  (let ((process-name "blog-server")
+	(buffer-name "blog-srv-buf")
+	(port-number "8000"))
+    (with-current-buffer buffer-name
+      (erase-buffer))
+    (start-process process-name buffer-name "python" "-m" "SimpleHTTPServer" port-number)
+    (split-window-below (- (/ (window-total-height) 3)))
+    (other-window 1)
+    (switch-to-buffer buffer-name)))
+
+(defun blog-tool-stop-server ()
+  "Stop the http server."
+  (interactive)
+  (stop-process "blog-server"))
+
 
 
 
