@@ -1,7 +1,7 @@
 #+TITLE: Git Note
 #+AUTHOR: Peng Li
 #+EMAIL: seudut@gmail.com
-#+DATE: 2016-12-18
+#+DATE: <2016-12-18>
 
 * Git Note
 ** Update an forked repo on  Github

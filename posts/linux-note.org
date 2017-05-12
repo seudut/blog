@@ -1,7 +1,7 @@
 #+TITLE: Note of Linux (Debian)
 #+AUTHOR: Peng Li
 #+EMAIL: seudut@gmail.com
-#+DATE: 2016-12-23
+#+DATE: <2016-12-23>
 
 * Install and Environment
 ** Install ios in virtual box

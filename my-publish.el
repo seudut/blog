@@ -114,7 +114,8 @@
 	   :sitemap-filename "sitemap.org"
 	   :sitemap-title "Blog"
 	   :sitemap-sort-files anti-chronologically
-	   :sitemap-file-entry-format "%d  %t"
+	   :sitemap-date-format "%h %d, %Y"
+	   :sitemap-file-entry-format "%d » %t"
 
 	   ;; other generic options
 	   :with-toc nil 		; table of contents

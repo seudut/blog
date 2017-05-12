@@ -1,7 +1,7 @@
 #+TITLE: The note of raspberry
 #+AUTHOR: Peng Li
 #+EMAIL: seudut@gmail.com
-#+DATE: 2017-02-18
+#+DATE: <2017-02-18>
 
 * Install Raspbian 
 ** format the sd card and install the image
