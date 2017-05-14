@@ -3,6 +3,9 @@
 #+EMAIL: seudut@gmail.com
 #+DATE: 2017-03-12
 
+Hello, my name is Li, Peng. I am a coder, who is interested in Emacs, Vim. The website is generated using Org mode in Emacs.
+I am also interested in programming languages such as C/C++, Lua, Perl, Lisp, etc.
+
 - My home page http://www.seudut.com
 
 - Github https://github.com/seudut

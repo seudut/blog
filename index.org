@@ -1,11 +1,10 @@
-#+TITLE: My Personal Wiki
+#+TITLE: About Me
 #+AUTHOR: Peng Li
 #+EMAIL: seudut@gmail.com
 #+DATE: 2016-10-25
 #+STARTUP: showall
 
-Welcome to Peng's Personal Wiki
+Hello, my name is Li, Peng. I am a coder, who is interested in Emacs, Vim.  I am also interested in programming languages such as C/C++, Lua, Perl, Lisp, etc.
 
-* Blog
-- [[file:posts/Blog-with-org-mode.org][Blow with Org-mode]]
-- [[file:git-note.org][Git Note]]
+The websiteis generated using Org mode in Emacs. The source code is located on my github [[https://github.com/seudut/blog.git][blog]].  You can contact me by mail seudut@gmail.com.
+

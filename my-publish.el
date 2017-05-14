@@ -41,7 +41,7 @@
        "<header id= 'banner'>"
        "<a class=\"title\"href= '/' >Peng Li</a>"
        "<nav><ul>"
-       "<li><a href= '/about.html' >About</a></li>"
+       "<li><a href= '/index.html' >About</a></li>"
        "<li><a href= '/posts/sitemap.html' >Blog</a></li>"
        ;; "<li><a href= '/index.html' >Home</a></li>"
        "</ul></nav>"
