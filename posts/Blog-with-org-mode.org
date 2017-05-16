@@ -16,7 +16,6 @@ nothing else)]]。 其中 =css= , 利用的是 =worg.css=, 并参考了[[http://
 其中有些配置可能是 =Org= 版本不同的原因，有些不同。比如 =htlm-head=, 代替 了 =style=
 
 #+INCLUDE: "../my-publish.el" src emacs-lisp :lines "29-"
-
 #+BEGIN_SRC sh
   sudo aptitude install tmux emacs
 #+END_SRC
@@ -27,4 +26,8 @@ nothing else)]]。 其中 =css= , 利用的是 =worg.css=, 并参考了[[http://
 
 * Web server
 
-* CGI update
+* Crontab
+#+BEGIN_SRC sh
+  # m h  dom mon dow   command
+  */30 *   *   *   *     cd /home/seudut/blog && make publish OUTDIR="~/www/html/" emacs=/usr/local/bin/emacs UPDATE=true
+#+END_SRC
