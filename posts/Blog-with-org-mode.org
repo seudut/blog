@@ -12,8 +12,8 @@
  refered to lots of other websites, like [[http://orgmode.org/worg/][worg]], [[http://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html][Publishing Org-mode files to HTML]], [[https://ogbe.net/blog/blogging_with_org.html][Blogging using org-mode (and nothing else)]].
 
 * Org-publish configure
-Here is the configure of Org-publish. It setups the most important  variable =org-publish-project-alist=.  Also, it defines
-the header and footer of the html page.
+Here is the configure of Org-publish (=my-publish.el= in the source code). It setups the most important variable 
+=org-publish-project-alist=.  Also, it defines the header and footer of the html page.
 #+INCLUDE: "../my-publish.el" src emacs-lisp :lines "29-"
 #+BEGIN_SRC sh
   sudo aptitude install tmux emacs
@@ -22,10 +22,14 @@ the header and footer of the html page.
 
 
 * CI build
+Here is the =Makefile= in the source code.
+#+INCLUDE: "../Makefile" src makefile :lines "2-"
+
 
 * Web server
 
 * Crontab
+Here is the crontab on my VPS. It updates the source code of blog and generates the web pages every 30 minutes. 
 #+BEGIN_SRC sh
   # m h  dom mon dow   command
   */30 *   *   *   *     cd /home/seudut/blog && make publish OUTDIR="~/www/html/" emacs=/usr/local/bin/emacs UPDATE=true
